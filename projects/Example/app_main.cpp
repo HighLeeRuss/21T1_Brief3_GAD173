@@ -79,7 +79,7 @@ namespace App
 			{
 				kage::World::pause(!kage::World::pause());
 			}
-			if (kage::Input::isKeyPressed(sf::Keyboard::F12))
+			if (kage::Input::isKeyPressed(sf::Keyboard::F11))
 			{
 				g_showInspector = !g_showInspector;
 			}
