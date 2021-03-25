@@ -16,6 +16,7 @@ TileMap::TileMap()
 	m_tileDefinitions.push_back({ false, false, 6, 0 });	// Tile Definition 2: Chest
 	m_tileDefinitions.push_back({ false, false, 1, 0 });	// Tile Definition 3: Health
 	m_tileDefinitions.push_back({ false, false, 27, 13 });	// Tile Definition 4: Player Spawn
+	m_tileDefinitions.push_back({ false, false, 24, 30 });  // Tile Definition 5: Axe Thing?
 
 	setMapSize(16, 16);
 
