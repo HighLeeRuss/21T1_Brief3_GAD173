@@ -60,4 +60,14 @@ public:
 
 	// Return a reference to the Atlas.
 	kage::Atlas& getAtlas();
+
+	void setTile(int x, int y, int layer, Tile tile);
+	Tile getTile(int x, int y, int layer);
+
+	void load(std::string filename);
+	void save(std::string filename);
+
+	int getMapWidth();
+	int getMapHeight();
+
 };

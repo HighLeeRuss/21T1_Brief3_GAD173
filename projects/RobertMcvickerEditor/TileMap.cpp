@@ -1,5 +1,6 @@
 #include "TileMap.h"
 #include "app.h"
+#include "kf/kf_string.h"
 
 TileMap::TileMap()
 {
@@ -67,4 +68,86 @@ std::vector<TileDefinition>& TileMap::getTileDefinitions()
 kage::Atlas& TileMap::getAtlas()
 {
 	return m_atlas;
+}
+
+void TileMap::setTile(int x, int y, int layer, Tile tile)
+{
+	if (x >= 0 && x < m_mapWidth && y >= 0 && y < m_mapHeight && layer >= 0 && layer < Layer::e_layerCount )
+	{
+		m_tiles[layer][x + y * m_mapWidth] = tile;
+	}
+}
+Tile TileMap::getTile(int x, int y, int layer)
+{
+	Tile tile;
+	if (x >= 0 && x < m_mapWidth && y >= 0 && y < m_mapHeight && layer >= 0 && layer < Layer::e_layerCount)
+	{
+		tile = m_tiles[layer][x + y * m_mapWidth];
+	}
+	return tile;
+}
+
+std::vector<std::string> grabRow(std::fstream& file) 
+{
+	std::string row;
+	std::getline(file, row);
+	return kf::split(row, ',');
+}
+
+void TileMap::load(std::string filename)
+{
+	std::fstream file(filename);
+	auto row = grabRow(file);
+	int width = std::stoi(row[0]);
+	int height = std::stoi(row[1]);
+	int layers = std::stoi(row[2]);
+	setMapSize(width, height);
+	for (int layer = 0; layer < layers; ++layer)
+	{
+		for (int y = 0; y < height; ++y)
+		{
+			row = grabRow(file);
+			for (int x = 0; x < row.size(); ++x)
+			{
+				Tile tile;
+				tile.tiledef = std::stoi(row[x]);
+				setTile(x, y, layer, tile);
+			}
+		}
+	}
+
+
+}
+
+void TileMap::save(std::string filename)
+{
+	std::fstream file(filename, std::ios::out);
+	file << getMapWidth() << "," <<
+		getMapHeight() << ", 2" << std::endl;
+	for (int layer = 0; layer < 2; ++layer)
+	{
+		for (int y = 0; y < getMapHeight(); ++y)
+		{
+			for (int x = 0; x < getMapWidth();
+
+				++x)
+			{
+				Tile tile = getTile(x, y, layer);
+				file << tile.tiledef;
+				if (x != getMapWidth() - 1)
+					file << ", ";
+			}
+			file << std::endl;
+		}
+	}
+}
+
+int TileMap::getMapWidth()
+{
+	return m_mapWidth;
+}
+
+int TileMap::getMapHeight()
+{
+	return m_mapHeight;
 }

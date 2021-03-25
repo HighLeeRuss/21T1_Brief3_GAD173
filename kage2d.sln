@@ -11,9 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{B6
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "kage", "dev\components\kage\kage.vcxproj", "{B19D6BF2-9D55-AD3F-065D-869BF2334830}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Example", "projects\Example\Example.vcxproj", "{A29299A4-9684-4EF1-B114-3B1F724F55C8}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Brief2", "projects\Brief2\Brief2.vcxproj", "{4370163F-F939-4286-95D6-ACA03DBAE6C2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RobertMcvickerEditor", "projects\RobertMcvickerEditor\RobertMcvickerEditor.vcxproj", "{4370163F-F939-4286-95D6-ACA03DBAE6C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{B19D6BF2-9D55-AD3F-065D-869BF2334830}.Debug|x64.Build.0 = Debug|x64
 		{B19D6BF2-9D55-AD3F-065D-869BF2334830}.Release|x64.ActiveCfg = Release|x64
 		{B19D6BF2-9D55-AD3F-065D-869BF2334830}.Release|x64.Build.0 = Release|x64
-		{A29299A4-9684-4EF1-B114-3B1F724F55C8}.Debug|x64.ActiveCfg = Debug|x64
-		{A29299A4-9684-4EF1-B114-3B1F724F55C8}.Debug|x64.Build.0 = Debug|x64
-		{A29299A4-9684-4EF1-B114-3B1F724F55C8}.Release|x64.ActiveCfg = Release|x64
-		{A29299A4-9684-4EF1-B114-3B1F724F55C8}.Release|x64.Build.0 = Release|x64
 		{4370163F-F939-4286-95D6-ACA03DBAE6C2}.Debug|x64.ActiveCfg = Debug|x64
 		{4370163F-F939-4286-95D6-ACA03DBAE6C2}.Debug|x64.Build.0 = Debug|x64
 		{4370163F-F939-4286-95D6-ACA03DBAE6C2}.Release|x64.ActiveCfg = Release|x64
@@ -40,7 +34,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6F3DC397-DB74-0B2F-E47E-6F5250353228} = {927AE6D6-7E73-0529-A7A5-EAAD93FDE434}
 		{B19D6BF2-9D55-AD3F-065D-869BF2334830} = {6F3DC397-DB74-0B2F-E47E-6F5250353228}
-		{A29299A4-9684-4EF1-B114-3B1F724F55C8} = {B63FEAB7-A20D-DEBD-8BA1-4EE4770EBA22}
 		{4370163F-F939-4286-95D6-ACA03DBAE6C2} = {B63FEAB7-A20D-DEBD-8BA1-4EE4770EBA22}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
