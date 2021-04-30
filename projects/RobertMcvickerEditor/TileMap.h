@@ -31,6 +31,20 @@ public:
 		e_editor,		// Editor mode. All tiles will render.
 		e_game			// Game mode. Only "visibleInGame" tiles will render.
 	};
+	enum TileTypes
+	{
+		e_blank = 0,
+		e_Wall,
+		e_chest,
+		e_health,
+		e_playerSpawn,
+		e_manaSpawn,
+		e_devilSpawn,
+		e_frostySpawn,
+		e_door,
+
+
+	};
 
 private:
 	int m_mapWidth = 0;									// Width of the map in tiles.
@@ -69,5 +83,6 @@ public:
 
 	int getMapWidth();
 	int getMapHeight();
+	void setMode(Mode mode);
 
 };

@@ -102,12 +102,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="app.h" />
+    <ClInclude Include="Devil.h" />
+    <ClInclude Include="EndCollider.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Fireball.h" />
+    <ClInclude Include="Giant.h" />
+    <ClInclude Include="ManaOrb.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Rabbit.h" />
     <ClInclude Include="TileMap.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="app.cpp" />
     <ClCompile Include="app_main.cpp" />
     <ClCompile Include="dependencies.cpp" />
+    <ClCompile Include="Devil.cpp" />
+    <ClCompile Include="EndCollider.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Fireball.cpp" />
+    <ClCompile Include="Giant.cpp" />
+    <ClCompile Include="ManaOrb.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Rabbit.cpp" />
     <ClCompile Include="TileMap.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

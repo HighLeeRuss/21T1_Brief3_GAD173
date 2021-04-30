@@ -25,7 +25,14 @@
 #include "TileMap.h"
 
 // GameObjects
-// #include "Rabbit.h"
+ #include "Rabbit.h"
+#include "Devil.h"
+#include "FireBall.h"
+#include "Giant.h"
+#include "ManaOrb.h"
+#include "Player.h"
+#include "EndCollider.h"
+
 
 #pragma warning(disable: 4100)
 
@@ -33,6 +40,12 @@
 enum Categories
 {
 	
+};
+
+enum GameState
+{
+	e_editor = 0,
+	e_game,
 };
 
 
@@ -47,12 +60,24 @@ namespace App
 	sf::Clock& getClock();
 	sf::Font& getFont();
 	kf::Xor128& getRNG();
+	extern GameState m_currentState;
+	
 
 	// For app.cpp. This is where you do most of your stuff.
 	bool start();
 	void update(float deltaT);
+	void updateGame(float deltaT);
+	void updateEditor(float deltaT);
 	void render();
+	void renderGame();
+	void renderEditor();
 	void cleanup();
+	//GameState getState();
+	void setState(GameState newState);
+	void enterStateEditor();
+	void enterStateGame();
+	void buildMap();
+
 
 	// Example of exposing a variable to other files.
 	// extern means this isn't actually making the variable, it's just saying its available, 

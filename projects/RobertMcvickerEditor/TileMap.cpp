@@ -17,15 +17,18 @@ TileMap::TileMap()
 	m_tileDefinitions.push_back({ false, false, 1, 0 });	// Tile Definition 3: Health
 	m_tileDefinitions.push_back({ false, false, 27, 13 });	// Tile Definition 4: Player Spawn
 	m_tileDefinitions.push_back({ false, false, 24, 30 });  // Tile Definition 5: Axe Thing?
+	m_tileDefinitions.push_back({ false, false, 49, 59 }); //Tile def 6: devil
+	m_tileDefinitions.push_back({ false, false, 54, 59 }); // tile def 7 frosty
+	m_tileDefinitions.push_back({ false, true, 1, 11 }); //tile def 8: door
 
 	setMapSize(16, 16);
 
 	// Put some testing data into the map. This code should be removed once you add map editing.
-	m_tiles[Layer::e_background][0 + 0 * m_mapWidth] = { 1,0 }; // {1,0} means tile definition 1 with data 0.
-	m_tiles[Layer::e_background][1 + 1 * m_mapWidth] = { 2,0 };
-	m_tiles[Layer::e_background][2 + 2 * m_mapWidth] = { 3,0 };
-	m_tiles[Layer::e_foreground][0 + 0 * m_mapWidth] = { 2,0 };
-	m_tiles[Layer::e_background][15 + 15 * m_mapWidth] = { 4,0 };
+	//m_tiles[Layer::e_background][0 + 0 * m_mapWidth] = { 1,0 }; // {1,0} means tile definition 1 with data 0.
+	//m_tiles[Layer::e_background][1 + 1 * m_mapWidth] = { 2,0 };
+	//m_tiles[Layer::e_background][2 + 2 * m_mapWidth] = { 3,0 };
+	//m_tiles[Layer::e_foreground][0 + 0 * m_mapWidth] = { 2,0 };
+	//m_tiles[Layer::e_background][15 + 15 * m_mapWidth] = { 4,0 };
 }
 
 TileMap::~TileMap()
@@ -56,6 +59,7 @@ void TileMap::render(sf::RenderTarget& rt)
 				{
 					m_atlas.draw(rt, x * m_tileWidth, y * m_tileHeight, td.tileX, td.tileY);
 				}
+				
 			}
 		}
 	}
@@ -151,4 +155,9 @@ int TileMap::getMapWidth()
 int TileMap::getMapHeight()
 {
 	return m_mapHeight;
+}
+
+void TileMap::setMode(Mode mode)
+{
+	m_mode = mode;
 }
